@@ -1,0 +1,12 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <div id="people-list">
+        {% for person in people %}
+            <div class="person">
+                <img src="{{ url_for('static', filename='path/to/' + person['id'] ~ '.jpg') }}" alt="{{ person['name'] }}" style="border: 2px solid {{ person['color'] }};"><br>
+                {{ person['name'] }}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
