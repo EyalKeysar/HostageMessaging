@@ -1,1 +1,13 @@
 <!-- Your form goes here with options to select a person and write a message -->
+{% extends 'base.html'%}
+{% block content %}
+
+    <div>
+        <h1>{{person}}</h1>
+    </div>
+    <form class="form-floating" action="#" method="post">
+        <textarea name="ta" class="text-light bg-dark form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+{%endblock%}

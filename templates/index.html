@@ -2,9 +2,15 @@
 {% extends "base.html" %}
 {% block content %}
     <div id="people-list">
-        {% for person in people %}
+        {% for person in unlettered_people %}
             <div class="person">
-                <img src="{{ url_for('static', filename='path/to/' + person['id'] ~ '.jpg') }}" alt="{{ person['name'] }}" style="border: 2px solid {{ person['color'] }};"><br>
+                <img src="{{ url_for('static', filename='path/to/' + person['id'] ~ '.jpg') }}" alt="{{ person['name'] }}" style="border: 2px solid black;"><br>
+                {{ person['name'] }}
+            </div>
+        {% endfor %}
+        {% for person in lettered_people %}
+            <div class="person">
+                <img src="{{ url_for('static', filename='path/to/' + person['id'] ~ '.jpg') }}" alt="{{ person['name'] }}" style="border: 2px solid red;"><br>
                 {{ person['name'] }}
             </div>
         {% endfor %}
