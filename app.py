@@ -1,42 +1,33 @@
-from flask import Flask, render_template, request, jsonify
-
+from flask import Flask, render_template, request, jsonify, redirect
+from dbrepo import DbRepo
 app = Flask(__name__)
 
 # Your people data (replace with your actual data)
-people = []
-with open('output.txt', 'r', encoding='utf-8') as r:
-    for line in r.readlines():
-        name, image_link = line.strip().split(': ')
-        if(',' in name):
-            name = name[:name.index(',')]
-        if('ז"ל' not in name):
-            if('א' in name):
-                people.append({'name': name, 'image_link': image_link, 'lettered': False})
-            else:    
-                people.append({'name': name, 'image_link': image_link, 'lettered': True})
             
-
 
 @app.route('/')
 def index():
-    return render_template('index.html', people=people)
+    #redirect to board
+    return redirect('/board')
 
 @app.route('/form/<person>', methods=['GET', 'POST'])
 def form(person):
     if request.method == 'POST':
         text = request.form['ta']
-        print(text)
-        return jsonify({'status': 'success'})
+        DbRepo.letter(person, text)
+        return redirect('/board')
     else:
-        return render_template('form.html', people=people , person=person)
+        return render_template('form.html', people=DbRepo.get_people() , person=person)
+
+@app.route('/letter/<person>')
+def letter(person):
+    return render_template('letter.html', person=person, image_link=DbRepo.get_image_link(person), letter=DbRepo.get_letter(person))
 
 @app.route('/board')
 def board():
+    people = DbRepo.get_people()
     numofpeople = len(people)/5
-    return render_template('board.html', 
-                           unlettered_people=[person for person in people if not person['lettered']], 
-                           lettered_people=[person for person in people if person['lettered']], 
-                           numofpeopleinarow=numofpeople)
+    return render_template('board.html', lettered_people=DbRepo.get_lettered_people(), unlettered_people=DbRepo.get_unlettered_people(), numofpeopleinarow=numofpeople)
 
 
 
