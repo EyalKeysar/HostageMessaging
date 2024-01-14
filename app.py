@@ -17,7 +17,7 @@ def form(person):
         DbRepo.letter(person, text)
         return redirect('/board')
     else:
-        return render_template('form.html', people=DbRepo.get_people() , person=person)
+        return render_template('form.html', people=DbRepo.get_people() , person=person, person_image=DbRepo.get_image_link(person))
 
 @app.route('/letter/<person>')
 def letter(person):

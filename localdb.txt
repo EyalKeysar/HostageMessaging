@@ -1,5 +1,5 @@
-עדן ירושלמי: https://img.mako.co.il//2023/11/05/EdenJerusalem.jpg: False
-אליה כהן: https://img.mako.co.il//2023/11/05/AliaCohen.jpg: False
+עדן ירושלמי: https://img.mako.co.il//2023/11/05/EdenJerusalem.jpg: True: Some Info [][] [][]
+אליה כהן: https://img.mako.co.il//2023/11/05/AliaCohen.jpg: True: אןכןכןכ
 איתי סבירסקי: https://img.mako.co.il//2023/11/05/ItaiSviraski.jpg: False
 מישל ניסנבאום: https://img.mako.co.il//2023/11/05/MichelleNissenbaum.jpg: False
 נעמה לוי: https://img.mako.co.il//2023/11/05/NaamaLevy.jpg: False
@@ -12,18 +12,18 @@
 איתן מור: https://img.mako.co.il//2023/11/05/eitanMor.jpg: False
 דניאלה גלבוע: https://img.mako.co.il//2023/11/05/DanielaGilboa.jpg: False
 קארינה ארייב: https://img.mako.co.il//2023/11/05/KarinaAriev.jpg: False
-עידן שתיוי: https://img.mako.co.il//2023/11/05/EdenShteoi.jpg: False
+עידן שתיוי: https://img.mako.co.il//2023/11/05/EdenShteoi.jpg: True: אוןו
 איתי חן: https://img.mako.co.il/2023/11/28/itayhennn.jfif: False
 ביפין ג'ושי: https://img.mako.co.il//2023/11/05/BipinJoshi.jpg: False
 תמיר נמרודי: https://img.mako.co.il//2023/11/05/TamirNimrodi.jpg: False
-שגיא דקל חן: https://img.mako.co.il/2023/11/05/SagiDekelChen.jpg: False
+שגיא דקל חן: https://img.mako.co.il/2023/11/05/SagiDekelChen.jpg: True: טט467יע
 חיים פרי: https://img.mako.co.il//2023/11/05/HaimPeri.jpg: False
 ליאור רודאיף: https://img.mako.co.il//2023/11/05/LiorRudaif.jpg: False
 עידן אלכסנדר: https://img.mako.co.il/2023/11/26/idanalex.jpeg: False
 עמרי מירן: https://img.mako.co.il//2023/11/05/OmriMiren.jpg: False
 צחי עידן: https://img.mako.co.il//2023/11/05/Tzachiidan.jpg: False
 אוריון הרננדס ראדו: https://img.mako.co.il//2023/11/05/OrionHernandezRado.jpg: False
-רן גוילי: https://img.mako.co.il//2023/11/05/RanGoyali.jpg: False
+רן גוילי: https://img.mako.co.il//2023/11/05/RanGoyali.jpg: True: החןכןעןכחכוג
 אלקנה בוחבוט : https://img.mako.co.il//2023/11/05/ElkanaBuhbut.jpg: False
 עומר נאוטרה: https://img.mako.co.il//2023/11/05/OmarNautra.jpg: False
 אלון אהל: https://img.mako.co.il//2023/11/05/AlonAhal.jpg: False

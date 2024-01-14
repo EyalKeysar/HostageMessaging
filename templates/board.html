@@ -4,7 +4,7 @@
         {% for person in unlettered_people %}
             <div class="col-xs-6 col-sm-3 col-md-3 col-lg-1">
                 <a href="/form/{{person['name']}}">
-                <img height='100' width="100" src="{{ person['image_link'] }}" alt="{{ person['name'] }}" class="img-responsive" style="border: 6px solid green;"><br>
+                <img height='100' width="100" src="{{ person['image_link'] }}" alt="{{ person['name'] }}" class="img-responsive" style="border: 6px solid yellow;"><br>
                 </a>
                 {{ person['name'] }}
             </div>
@@ -12,7 +12,7 @@
         {% for person in lettered_people%}
             <div class="col-xs-6 col-sm-3 col-md-3 col-lg-1">
                 <a href="/letter/{{person['name']}}">
-                <img height='100' width="100" src="{{ person['image_link'] }}" alt="{{ person['name'] }}" class="img-responsive" style="border: 6px solid yellow;"><br>
+                <img height='100' width="100" src="{{ person['image_link'] }}" alt="{{ person['name'] }}" class="img-responsive" style="border: 6px solid green ;"><br>
                 </a>
                 {{ person['name'] }}
             </div>
