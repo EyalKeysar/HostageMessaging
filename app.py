@@ -14,8 +14,12 @@ def index():
 def form(person):
     if request.method == 'POST':
         text = request.form['ta']
-        DbRepo.letter(person, text)
-        return redirect('/board')
+        if('|' not in text and '\n' not in text and len(text) < 100 and len(text) > 10):
+            DbRepo.letter(person, text)
+            return redirect('/board')
+        else:
+            return render_template('form.html', people=DbRepo.get_people() , person=person, person_image=DbRepo.get_image_link(person))
+
     else:
         return render_template('form.html', people=DbRepo.get_people() , person=person, person_image=DbRepo.get_image_link(person))
 
@@ -32,4 +36,4 @@ def board():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)

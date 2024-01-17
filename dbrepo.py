@@ -14,15 +14,15 @@ class DbRepo():
                     if(',' in name):
                         name = name[:name.index(',')]
                     if('ז"ל' not in name):
-                        w.write(name + ': ' + image_link + ': ' + 'False\n')
+                        w.write(name + '| ' + image_link + '| ' + 'False\n')
 
     def get_people():
         people = []
         with open(DB_FILE, 'r', encoding='utf-8') as r:
             for line in r.readlines():
-                name = line.split(': ')[0]
-                image_link = line.split(': ')[1]
-                lettered = bool(line.split(': ')[2])
+                name = line.split('| ')[0]
+                image_link = line.split('| ')[1]
+                lettered = bool(line.split('| ')[2])
 
                 people.append({'name': name, 'image_link': image_link, 'lettered': lettered})
         return people
@@ -31,9 +31,9 @@ class DbRepo():
         people = []
         with open(DB_FILE, 'r', encoding='utf-8') as r:
             for line in r.readlines():
-                name = line.split(': ')[0]
-                image_link = line.split(': ')[1]
-                lettered = "True" in (line.split(': ')[2])
+                name = line.split('| ')[0]
+                image_link = line.split('| ')[1]
+                lettered = "True" in (line.split('| ')[2])
 
                 if lettered:
                     people.append({'name': name, 'image_link': image_link, 'lettered': lettered})
@@ -43,9 +43,9 @@ class DbRepo():
         people = []
         with open(DB_FILE, 'r', encoding='utf-8') as r:
             for line in r.readlines():
-                name = line.split(': ')[0]
-                image_link = line.split(': ')[1]
-                lettered = "True" in (line.split(': ')[2])
+                name = line.split('| ')[0]
+                image_link = line.split('| ')[1]
+                lettered = "True" in (line.split('| ')[2])
 
                 if not lettered:
                     people.append({'name': name, 'image_link': image_link, 'lettered': lettered})
@@ -56,18 +56,18 @@ class DbRepo():
         with open(DB_FILE, 'r', encoding='utf-8') as r:
             for line in r.readlines():
                 if(name in line):
-                    return line.split(': ')[1].strip()
+                    return line.split('| ')[1].strip()
         return None
 
     def is_lettered(name):
         with open(DB_FILE, 'r', encoding='utf-8') as r:
             for line in r.readlines():
                 if(name in line):
-                    return "True" in (line.split(': ')[2].strip())
+                    return "True" in (line.split('| ')[2].strip())
         return False
         
     def letter(name, letter: str):
-        if(DbRepo.is_lettered(name)):
+        if(DbRepo.is_lettered(name) or "|" in letter):
             return
         with open(DB_FILE, 'r+', encoding='utf-8') as r:
             lines = r.readlines()
@@ -76,8 +76,8 @@ class DbRepo():
 
             for i in range(len(lines)):
                 if name in lines[i]:
-                    parts = lines[i].split(': ')
-                    lines[i] = f"{parts[0]}: {parts[1]}: True: {letter}\n"
+                    parts = lines[i].split('|')
+                    lines[i] = f"{parts[0]}| {parts[1]}| True| {letter}\n"
 
             r.writelines(lines)
 
@@ -85,7 +85,7 @@ class DbRepo():
         with open(DB_FILE, 'r', encoding='utf-8') as r:
             for line in r.readlines():
                 if(name in line):
-                    return line.split(': ')[3].strip()
+                    return line.split('| ')[3].strip()
         return None
 
 
